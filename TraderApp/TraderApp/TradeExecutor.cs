@@ -22,7 +22,7 @@ namespace TraderApp
 
         public void ExecuteSellOrder(TradeOrder tradeOrder)
         {
-            var buyOrder = OrderRegistry.GetOrderByType(Enum.OrderType.Buy).FirstOrDefault(x => x.Price <= tradeOrder.Price && x.Stock.Name.Equals(tradeOrder.Stock.Name));
+            var buyOrder = OrderRegistry.GetOrderByType(Enum.OrderType.Buy).FirstOrDefault(x => x.Price >= tradeOrder.Price && x.Stock.Name.Equals(tradeOrder.Stock.Name));
             if (buyOrder != null)
             {
                 UserRegistry.RemoveStock(tradeOrder.User.Name, tradeOrder.Stock);
@@ -32,7 +32,7 @@ namespace TraderApp
 
         public void ExecuteBuyOrder(TradeOrder tradeOrder)
         {
-            var sellOrder = OrderRegistry.GetOrderByType(Enum.OrderType.Sell).FirstOrDefault(x => x.Price >= tradeOrder.Price && x.Stock.Name.Equals(tradeOrder.Stock.Name));
+            var sellOrder = OrderRegistry.GetOrderByType(Enum.OrderType.Sell).FirstOrDefault(x => x.Price <= tradeOrder.Price && x.Stock.Name.Equals(tradeOrder.Stock.Name));
             if (sellOrder != null)
             {
                 UserRegistry.RemoveStock(sellOrder.User.Name, sellOrder.Stock);
