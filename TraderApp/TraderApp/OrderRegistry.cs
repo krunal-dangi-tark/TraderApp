@@ -2,10 +2,10 @@
 
 namespace TraderApp
 {
-    internal class OrderRegistry
+    internal static class OrderRegistry
     {
         private static readonly List<TradeOrder> tradeOrders = new List<TradeOrder>();
-        public List<TradeOrder> GetOrderByType(Enum.OrderType orderType) => tradeOrders.Where(x => x.OrderType.Equals(orderType)).ToList();
-        public void PlaceOrder(TradeOrder order) => tradeOrders.Add(order);
+        public static List<TradeOrder> GetOrderByType(Enum.OrderType orderType) => tradeOrders.Where(x => x.OrderType.Equals(orderType)).ToList();
+        public static void PlaceOrder(TradeOrder order) => tradeOrders.Add(order);
     }
 }
