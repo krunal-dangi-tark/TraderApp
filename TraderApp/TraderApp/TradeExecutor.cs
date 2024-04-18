@@ -27,6 +27,7 @@ namespace TraderApp
             {
                 UserRegistry.RemoveStock(tradeOrder.User.Name, tradeOrder.Stock);
                 UserRegistry.AddStock(buyOrder.User.Name, buyOrder.Stock);
+                OrderRegistry.RemoveOrder(buyOrder);
             }
         }
 
@@ -37,6 +38,7 @@ namespace TraderApp
             {
                 UserRegistry.RemoveStock(sellOrder.User.Name, sellOrder.Stock);
                 UserRegistry.AddStock(tradeOrder.User.Name, tradeOrder.Stock);
+                OrderRegistry.RemoveOrder(sellOrder);
             }
         }
     }

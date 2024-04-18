@@ -1,6 +1,6 @@
 ﻿namespace TraderApp
 {
-    internal class Enum
+    public class Enum
     {
         public enum OrderType
         {

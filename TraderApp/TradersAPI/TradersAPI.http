@@ -1,0 +1,6 @@
+@TradersAPI_HostAddress = http://localhost:5064
+
+GET {{TradersAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

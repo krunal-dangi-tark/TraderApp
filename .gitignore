@@ -2,3 +2,6 @@
 /TraderApp/.vs/TraderApp/FileContentIndex/*
 /TraderApp/.vs/TraderApp/v17/*
 /TraderApp/.vs/TraderApp/DesignTimeBuild/*
+/TraderApp/TraderApp/bin/*
+/TraderApp/TradersAPI/bin/*
+/TraderApp/TradersAPI/obj/*
